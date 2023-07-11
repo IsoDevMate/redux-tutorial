@@ -16,7 +16,9 @@ const PostSlice = CreateSlice({
     PostReducer:(state , action) => {
         switch (action.type) {
             case 'added':
-                return 
+                return{
+                    id:action.id,
+                } 
             default:
                 return state
         }
