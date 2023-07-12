@@ -1,8 +1,8 @@
 import {
     Route,Switch,Redirect,BrowserRouter as Router
 } from 'react-router-dom' ;
-import { PostsList } from "./features/posts/postlist.jsx";
-
+import { PostsLists } from "./features/posts/postlist";
+import {  AddFormPost } from "./features/AddFormPost.jsx"
 export const App = () => {
 
 
@@ -14,7 +14,8 @@ export const App = () => {
           <Route
             exact
             path="/"
-          component={PostsList}
+          component={PostsLists}
+          Component={AddFormPost}
           />
           <Redirect to="/" />
         </Switch>
