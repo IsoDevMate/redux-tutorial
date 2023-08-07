@@ -9,22 +9,22 @@ posts value from the Redux store, then loop over the array of posts and show eac
 import { useSelector } from "react-redux"
 
 
-export const PostsLists=()=>{
-const selectedposts = useSelector(state=>state.posts)
+export const PostsLists = () => {
+  const selectedposts = useSelector(state => state.posts);
 
-const renderedposts = selectedposts.map(selectedpost=>(
-    <article className="post-excerpt" key={selectedpost.id}>
-    <h3>{selectedpost.title}</h3>
-    <p className="post-content">{selectedpost.message.substring(0, 100)}</p>
-  </article>
-))
-return(
+  const renderedposts = selectedposts ? selectedposts.map(({ id, title, message }) => (
+    <article className="post-excerpt" key={id}>
+      <h3>{title}</h3>
+      <p className="post-content">{message ? message.substring(0, 100) : ''}</p>
+    </article>
+  )) : null;
+
+  return (
     <section>
-        <h2>POSTS</h2>
-        <p>{renderedposts}</p>
+      <h2>POSTS</h2>
+      <div>{renderedposts}</div>
     </section>
-)
-
+  );
 }
 
 

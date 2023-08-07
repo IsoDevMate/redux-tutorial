@@ -9,6 +9,7 @@ const InitialState= [
 id:2,username:"wuodOuma", message:"yummy"
 }
 ]
+
 const PostSlice = CreateSlice({
     name: 'posts',
     InitialState,
